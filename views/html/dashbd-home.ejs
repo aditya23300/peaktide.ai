@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dashbd-home</title>
+    <link rel="stylesheet"  href="../css/dashbd-home.css" />  
+     <!-- Standard favicon -->
+     <link
+     rel="icon"
+     href="../pics/favicon-16x16.png"
+     sizes="16x16"
+     type="image/x-icon"
+   />
+</head>
+  </head>
+  <body>
+    <header class="header">
+      <!-- Logo Section -->
+      <div class="logo">
+        <img src="../pics/newlogo-removebg-preview.png" alt="Logo" />
+      </div>
+      <div class="logout-btn">
+        <button id="homeButton" class="sidebar-button">Home</button>
+        <button id="logoutButton" class="sidebar-button">Logout</button>
+      </div>
+    </header>
+    <div class="sidebar">
+      <div class="avatar">
+        <img
+          src="<%= userDetails.photoURL %>"
+          alt="User Avatar"
+          class="avatar-img"
+        />
+      </div>
+      <div class="user-details">
+        <h2><%= userDetails.username %></h2>
+        <p><%= userDetails.email %></p>
+      </div>
+      <div class="attendance-content">
+        <h2>Attendance summary:</h2>
+        <p id="todayattendance" class="current-percentage"></p>
+        <p id="overallattendance" class="total-percentage"></p>
+      </div>
+      <div class="buttons">
+        <button id="attendance-records" class="sidebar-button">
+          Attendance Records
+        </button>
+        <button id="ai-query-engine" class="sidebar-button">
+          AI-query Engine
+        </button>
+        <button id="ai-work-assistant" class="sidebar-button">
+          AI-work Assistant
+        </button>
+        <button id="notification-settings" class="sidebar-button">
+          Notification Settings
+        </button>
+        <button id="profile-settings" class="sidebar-button">
+          Profile Settings
+        </button>
+      </div>
+    </div>
+    <form id="userForm" class="attendance-form">
+      <h2>Update Today's Attendance</h2>
+      <label for="todayattended">Classes Attended Today:</label>
+      <input type="number" id="todayattended" required />
+
+      <label for="todaytotal">Total Classes Scheduled Today:</label>
+      <input type="number" id="todaytotal" required />
+
+      <p id="warningmsg"></p>
+      <button type="submit"><strong>Update Attendance</strong></button>
+    </form>
+    <div id="afterUserForm" style="display: none" class="attendance-form"></div>
+     <!-- logout Popup -->
+     <div id="logout-popup" class="logout-popup-modal">
+      <div class="logout-popup-content">
+        <span id="logout-close-btn">&times;</span>
+        <!-- Add the icon above the heading -->
+        <img
+          src="<%= userDetails.photoURL %>"
+          alt="User Avatar"
+          class="avatar-img logout-popup-img"
+        />
+        <h3 id="logout-popup-text-content"></h3>
+      </div>
+    </div>
+  </body>
+  <script type="module"  src="../js/dashbd-common.js" ></script>
+  <script type="module"  src="../js/dashbd-home.js"></script>
+</html>

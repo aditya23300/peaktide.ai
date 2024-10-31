@@ -1,0 +1,324 @@
+/* Body styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: grid;
+  font-family: "Roboto", sans-serif;
+  color: #333;
+  display: flex;
+  background: url("/pics/bghomepage.jpg") no-repeat center center fixed;
+  background-size: cover;
+  overflow: hidden;
+  box-sizing: border-box;
+  grid-template-columns: 1fr auto; /* Two columns: one for sidebar+logo, one for content */
+  grid-template-rows: auto 1fr auto; /* Two rows: one for header, one for the rest */
+  width: 100vw; /* Full width of the viewport */
+  position: fixed; /* Ensure it's fixed on the screen */
+}
+/* Header: logo and card in grid layout */
+.header {
+  grid-column: 1 / 3; /* Span across both columns */
+  display: grid;
+  grid-template-columns: auto 1fr auto; /* Logo on left, card on right */
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  position: fixed; /* Fix header at the top */
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+/* Logo styling */
+.logo img {
+  max-width: 50%; /* Set a max width for the logo */
+  height: auto; /* Maintain aspect ratio */
+}
+/* Sidebar styling */
+.sidebar {
+  position: fixed; /* Absolute positioning */
+  grid-row: 2 / 3; /* Place sidebar below the logo */
+  grid-column: 1 / 2; /* Sidebar takes the first column */
+  grid-template-rows: auto 1fr; /* Avatar row and button row */
+  justify-items: center; /* Center items horizontally */
+  width: 18%;
+  background-color: #e74c3c; /* Red color */
+  align-items: center;
+  padding: 20px;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+  transition: width 0.3s;
+  height: fit-content;
+  border-radius: 15px; /* More rounded edges */
+  margin-top: 4%;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 4px 30px rgba(0, 0, 0, 0.3); /* Updated shadow for 3D effect */
+  top: 60px; /* Below the navbar */
+  left: 0; /* Align to the left */
+}
+
+/* Avatar styling */
+.avatar {
+  display: flex; /* Use flexbox for centering the image */
+  justify-content: center; /* Center the image horizontally */
+  align-items: center; /* Center the image vertically */
+  margin-bottom: 2.5%;
+  z-index: 10000; /* Make sure the avatar is above the background */
+}
+
+.avatar-img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  transition: transform 0.3s;
+  background-color: white; /* Add a background color to make it stand out */
+}
+
+/* Button container styling */
+.buttons {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Button styling */
+.sidebar-button {
+  background-color: #ffffff; /* Button background */
+  border: none;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 5px 0;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: red;
+}
+
+/* Button hover effects */
+.sidebar-button:hover {
+  background-color: black; /* Button hover color */
+  transform: translateY(-3px); /* Move up on hover */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  color: white;
+}
+
+/* Avatar hover effect */
+.avatar-img:hover {
+  transform: scale(1.1); /* Scale up avatar on hover */
+}
+
+/* Content styling */
+.attendance-content h2 {
+  font-size: 1.2rem; /* Title font size */
+  margin-bottom: 10px; /* Space below title */
+}
+
+.attendance-content p {
+  font-size: 1rem; /* Paragraph font size */
+  margin: 5px 0; /* Margin for paragraphs */
+}
+
+/* Percentage value styling */
+.percentage-value {
+  font-weight: bold; /* Bold for emphasis */
+  font-size: 1rem; /* Larger font size for percentage */
+}
+
+/* Animation effect for percentages */
+.attendance-content p {
+  transition: transform 0.3s; /* Smooth transition */
+}
+
+.attendance-content {
+  max-width: 100%;
+  margin-bottom: 1.5%;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5%;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-height: fit-content;
+}
+/* Button hover effects */
+.attendance-content:hover {
+  transform: translateY(-3px); /* Move up on hover */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Attendance Form Section */
+.custom-ui {
+  position: absolute; /* Change from fixed to relative */
+  grid-row: 3 / 4; /* Place form below the attendance card */
+  grid-column: 2 / 3; /* Position to the right of the sidebar */
+  width: 80%; /* Adjust width to suit your layout */
+  height: fit-content;
+  justify-items: center; /* Center items horizontally */
+  background-color: #e74c3c; /* Red color */
+  align-items: center;
+  padding: 20px;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+  transition: width 0.3s;
+
+  border-radius: 15px; /* More rounded edges */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 4px 30px rgba(0, 0, 0, 0.3); /* Updated shadow for 3D effect */
+  z-index: 1; /* Ensure it appears above other elements */
+  margin-bottom: 40px;
+  margin-left: 35%;
+  margin-top: 8%;
+  margin-right: 0px;
+}
+
+.custom-ui h2 {
+  margin-bottom: 20px;
+  font-size: 1.8em;
+  color: white;
+}
+
+.custom-ui label {
+  font-size: 1.1em;
+  color: white;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.custom-ui input {
+  width: 60%;
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.custom-ui button {
+  width: 62%;
+  padding: 10px;
+  font-size: 1.1em;
+  color: red;
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.custom-ui button:hover {
+  background-color: black;
+}
+.user-details h2 {
+  margin: 0px 0px 0px 0px;
+  color: white;
+}
+.user-details p {
+  margin: 0px 0px 5% 0px;
+  color: white;
+}
+.user-details {
+  text-align: center;
+}
+
+/* for logout button */
+.logout-btn {
+  display: flex;
+  gap: 20px; /* Sets 20px gap between buttons */
+  justify-self: end; /* Align the logout button to the end (right) */
+  margin-right: 5%;
+}
+.logout-btn button {
+  background-color: red; /* Light red background */
+  color: white;
+}
+
+/* records form filling*/
+/* Styling for the date range form */
+.date-range {
+  display: block;
+  flex-direction: column; /* Stack children vertically */
+  gap: 20px; /* Space between each line */
+}
+
+.date-range,
+.attendance-records {
+  width: 100%;
+  margin-bottom: 20px; /* Space between sections */
+}
+
+h2,
+p {
+  margin: 10px 0;
+}
+
+table {
+  border-collapse: collapse;
+  table-layout: 7%; /* Adjusts column width to fit content */
+  width: 61.5%; /* Remove full width, let the table adjust based on content */
+}
+
+table th,
+table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+  white-space: nowrap; /* Prevents text from wrapping to a new line */
+}
+
+/* for retry button*/
+.retry-btn {
+  display: flex;
+  gap: 20px; /* Sets 20px gap between buttons */
+}
+.retry-btn button {
+  background-color: red; /* Light red background */
+  color: white;
+}
+.blackerclass {
+  background: #000;
+  color: white;
+}
+/* Popup Modal Styles */
+.logout-popup-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+
+#logout-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+}
+
+#logout-close-btn:hover {
+  color: #000;
+}
+.logout-popup-content {
+  background-color: #e74c3c; /* Red color */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+  animation: popupIn 0.3s ease-out;
+  text-align: center;
+}
+.logout-popup-content h3 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: white;
+}

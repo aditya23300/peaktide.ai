@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Cache-Control"
+      content="no-store, no-cache, must-revalidate, proxy-revalidate"
+    />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+    <title>PeakTide - Student Productivity & Attendance Tracking</title>
+    <link rel="stylesheet" href="../css/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+    />
+    <!-- Standard favicon -->
+    <link
+      rel="icon"
+      href="../pics/favicon-16x16.png"
+      sizes="16x16"
+      type="image/x-icon"
+    />
+  </head>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  />
+  <body>
+    <header>
+      <nav class="navbar">
+        <a class="logo">
+          <!-- Add a logo image if needed -->
+          <img
+            src="../pics/newlogo-removebg-preview.png"
+            alt="PeakTide Logo"
+            width="100%"
+          />
+        </a>
+        <ul class="nav-links">
+          <li>
+            <a id="get-started-btn" class="start-trigger" href="#"
+              >Get Started</a
+            >
+          </li>
+          <li><a id="testimonial-btn" href="#">Testimonials</a></li>
+          <li><a id="contact-us-btn" href="#">Contact Us</a></li>
+          <li><a id="pricing-btn" href="#">Pricing</a></li>
+        </ul>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </header>
+
+    <div class="hero">
+      <h2>Welcome to PeakTide</h2>
+      <p>
+        Your ultimate tool for student productivity and attendance tracking.
+      </p>
+      <a href="#" class="btn-get-started start-trigger">Get Started</a>
+    </div>
+    <!-- Sign-In Popup -->
+    <div id="signin-popup" class="sign-in-popup-modal">
+      <div class="sign-in-popup-content">
+        <span id="signin-close-btn">&times;</span>
+        <!-- Add the icon above the heading -->
+        <i class="fas fa-user-circle signin-icon"></i>
+        <h3>Sign In</h3>
+        <form id="signin-form">
+          <div class="sign-in-input-group">
+            <input
+              type="email"
+              id="signin-email"
+              placeholder="Email"
+              required
+            />
+          </div>
+          <div class="sign-in-input-group">
+            <input
+              type="password"
+              id="signin-password"
+              placeholder="Password"
+              required
+            />
+          </div>
+          <button type="submit" class="btn-signin">Sign In</button>
+        </form>
+        <p id="sign-in-warningmsg" style="display: none"></p>
+        <p>
+          Don't have an account?
+          <button id="btn-signUp" class="btn-signUp">Sign Up Today</button>
+        </p>
+      </div>
+    </div>
+    <!-- Sign-up Popup -->
+    <div id="signUp-popup" class="sign-up-popup-modal">
+      <div class="sign-up-popup-content">
+        <span id="signUp-close-btn">&times;</span>
+        <!-- Add the icon above the heading -->
+        <i class="fas fa-user-circle signin-icon"></i>
+        <h3>Sign Up</h3>
+        <form id="signUp-form">
+          <div class="sign-up-input-group">
+            <input
+              type="text"
+              id="signUp-username"
+              placeholder="Username"
+              required
+            />
+          </div>
+          <div class="sign-up-input-group">
+            <input
+              type="email"
+              id="signUp-email"
+              placeholder="Email"
+              required
+            />
+          </div>
+          <div class="sign-up-input-group">
+            <input
+              type="tel"
+              id="signUp-phoneNumber"
+              placeholder="Phone Number"
+              required
+            />
+          </div>
+          <div class="sign-up-input-group">
+            <input
+              type="password"
+              id="signUp-password"
+              placeholder="Password"
+              required
+            />
+          </div>
+          <button type="submit" class="signUp-submit-btn">Sign Up</button>
+        </form>
+        <p id="sign-up-warningmsg" style="display: none"></p>
+      </div>
+    </div>
+    <!-- Testimonial Popup Modal -->
+    <div id="testimonial-popup" class="testimonial-popup-modal">
+      <div class="testimonial-popup-content" id="testimonial-popup-content">
+        <span id="testimonial-close-btn">&times;</span>
+        <!-- Close button -->
+        <h3>What Our Users Say</h3>
+        <div class="testimonial-slider">
+          <div class="testimonial-wrapper">
+            <!-- Testimonial Card 1 -->
+            <div class="testimonial-card">
+              <div
+                class="testimonial-img"
+                style="background-image: url('/pics/user1.jpg')"
+              ></div>
+              <h4>Jane Doe</h4>
+              <p>
+                "PeakTide has transformed the way I manage my study time. The AI
+                insights are incredibly helpful!"
+              </p>
+            </div>
+            <!-- Testimonial Card 2 -->
+            <div class="testimonial-card">
+              <div
+                class="testimonial-img"
+                style="background-image: url('/pics/user2.jpg')"
+              ></div>
+              <h4>John Smith</h4>
+              <p>
+                "An excellent tool for tracking my attendance and productivity.
+                Highly recommended for students."
+              </p>
+            </div>
+            <!-- Testimonial Card 3 -->
+            <div class="testimonial-card">
+              <div
+                class="testimonial-img"
+                style="background-image: url('/pics/user3.jpg')"
+              ></div>
+              <h4>Emily Johnson</h4>
+              <p>
+                "PeakTide has made my life so much easier. The features are
+                intuitive and easy to use."
+              </p>
+            </div>
+            <!-- Repeat cards to ensure infinite scrolling -->
+            <div class="testimonial-card">
+              <div
+                class="testimonial-img"
+                style="background-image: url('/pics/user1.jpg')"
+              ></div>
+              <h4>Jane Doe</h4>
+              <p>
+                "PeakTide has transformed the way I manage my study time. The AI
+                insights are incredibly helpful!"
+              </p>
+            </div>
+            <div class="testimonial-card">
+              <div
+                class="testimonial-img"
+                style="background-image: url('/pics/user2.jpg')"
+              ></div>
+              <h4>John Smith</h4>
+              <p>
+                "An excellent tool for tracking my attendance and productivity.
+                Highly recommended for students."
+              </p>
+            </div>
+            <div class="testimonial-card">
+              <div
+                class="testimonial-img"
+                style="background-image: url('/pics/user3.jpg')"
+              ></div>
+              <h4>Emily Johnson</h4>
+              <p>
+                "PeakTide has made my life so much easier. The features are
+                intuitive and easy to use."
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--contact-us- Popup Modal -->
+    <div id="contact-popup" class="contact-us-popup-modal">
+      <div class="popup-content-contact-us" id="popup-content-contact-us">
+        <span id="contact-us-close-btn">&times;</span>
+        <!-- Close button -->
+        <h3>Contact Us</h3>
+        <form class="contact-form" action="#" method="post">
+          <div class="contact-us-form-group">
+            <input type="text" name="name" placeholder="Your Name" required />
+          </div>
+          <div class="contact-us-form-group">
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              required
+            />
+          </div>
+          <div class="contact-us-form-group">
+            <textarea
+              name="message"
+              rows="5"
+              placeholder="Your Message"
+              required
+            ></textarea>
+          </div>
+          <div class="contact-us-form-group">
+            <button type="submit" class="contact-us-btn-submit">
+              Send Message
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- Pricing Popup Modal -->
+    <div id="pricing-popup" class="pricing-popup-modal">
+      <div class="pricing-popup-content" id="pricing-popup-content">
+        <span id="pricing-close-btn">&times;</span>
+        <!-- Close button -->
+        <h3>Pricing Plans</h3>
+        <div class="pricing-cards">
+          <!-- Card 1 -->
+          <div class="pricing-card">
+            <h4>Basic Plan</h4>
+            <p class="price">$19/month</p>
+            <ul>
+              <li>Feature 1</li>
+              <li>Feature 2</li>
+              <li>Feature 3</li>
+            </ul>
+            <button class="pricing-btn-proceed">Proceed</button>
+          </div>
+          <!-- Card 2 -->
+          <div class="pricing-card">
+            <h4>Standard Plan</h4>
+            <p class="price">$39/month</p>
+            <ul>
+              <li>Feature 1</li>
+              <li>Feature 2</li>
+              <li>Feature 3</li>
+              <li>Feature 4</li>
+            </ul>
+            <button class="pricing-btn-proceed">Proceed</button>
+          </div>
+          <!-- Card 3 -->
+          <div class="pricing-card">
+            <h4>Premium Plan</h4>
+            <p class="price">$59/month</p>
+            <ul>
+              <li>Feature 1</li>
+              <li>Feature 2</li>
+              <li>Feature 3</li>
+              <li>Feature 4</li>
+              <li>Feature 5</li>
+            </ul>
+            <button class="pricing-btn-proceed">Proceed</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../js/index.js" type="module"></script>
+  </body>
+</html>

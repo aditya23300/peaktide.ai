@@ -1,0 +1,515 @@
+/* Body styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: grid;
+  font-family: "Roboto", sans-serif;
+  color: #333;
+  display: flex;
+  background: url("/pics/bghomepage.jpg") no-repeat center center fixed;
+  background-size: cover;
+  overflow: hidden;
+  box-sizing: border-box;
+  grid-template-columns: 1fr auto; /* Two columns: one for sidebar+logo, one for content */
+  grid-template-rows: auto 1fr auto; /* Two rows: one for header, one for the rest */
+  width: 100vw; /* Full width of the viewport */
+  position: fixed; /* Ensure it's fixed on the screen */
+}
+/* Header: logo and card in grid layout */
+.header {
+  grid-column: 1 / 3; /* Span across both columns */
+  display: grid;
+  grid-template-columns: auto 1fr auto; /* Logo on left, card on right */
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  position: fixed; /* Fix header at the top */
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+/* Logo styling */
+.logo img {
+  max-width: 50%; /* Set a max width for the logo */
+  height: auto; /* Maintain aspect ratio */
+}
+/* Sidebar styling */
+.sidebar {
+  position: fixed; /* Absolute positioning */
+  grid-row: 2 / 3; /* Place sidebar below the logo */
+  grid-column: 1 / 2; /* Sidebar takes the first column */
+  grid-template-rows: auto 1fr; /* Avatar row and button row */
+  justify-items: center; /* Center items horizontally */
+  width: 18%;
+  background-color: #e74c3c; /* Red color */
+  align-items: center;
+  padding: 20px;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+  transition: width 0.3s;
+  height: fit-content;
+  border-radius: 15px; /* More rounded edges */
+  margin-top: 4%;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 4px 30px rgba(0, 0, 0, 0.3); /* Updated shadow for 3D effect */
+  top: 60px; /* Below the navbar */
+  left: 0; /* Align to the left */
+}
+
+/* Avatar styling */
+.avatar {
+  display: flex; /* Use flexbox for centering the image */
+  justify-content: center; /* Center the image horizontally */
+  align-items: center; /* Center the image vertically */
+  margin-bottom: 2.5%;
+  z-index: 10000; /* Make sure the avatar is above the background */
+}
+
+.avatar-img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  transition: transform 0.3s;
+  background-color: white; /* Add a background color to make it stand out */
+}
+
+/* Button container styling */
+.buttons {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Button styling */
+.sidebar-button {
+  background-color: #ffffff; /* Button background */
+  border: none;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 5px 0;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: red;
+}
+
+/* Button hover effects */
+.sidebar-button:hover {
+  background-color: black; /* Button hover color */
+  transform: translateY(-3px); /* Move up on hover */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  color: white;
+}
+
+/* Avatar hover effect */
+.avatar-img:hover {
+  transform: scale(1.1); /* Scale up avatar on hover */
+}
+
+/* Content styling */
+.attendance-content h2 {
+  font-size: 1.2rem; /* Title font size */
+  margin-bottom: 10px; /* Space below title */
+}
+
+.attendance-content p {
+  font-size: 1rem; /* Paragraph font size */
+  margin: 5px 0; /* Margin for paragraphs */
+}
+
+/* Percentage value styling */
+.percentage-value {
+  font-weight: bold; /* Bold for emphasis */
+  font-size: 1rem; /* Larger font size for percentage */
+}
+
+/* Animation effect for percentages */
+.attendance-content p {
+  transition: transform 0.3s; /* Smooth transition */
+}
+
+.attendance-content {
+  max-width: 100%;
+  margin-bottom: 1.5%;
+  background-color: black; /* Button background */
+  border: none;
+  border-radius: 5px;
+  padding: 0.5%;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: white;
+  text-align: center;
+  max-height: fit-content;
+}
+/* Button hover effects */
+.attendance-content:hover {
+  transform: translateY(-3px); /* Move up on hover */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.custom-ui {
+  position: absolute; /* Change from fixed to relative */
+  grid-row: 3 / 4; /* Place form below the attendance card */
+  grid-column: 2 / 3; /* Position to the right of the sidebar */
+  width: 70%; /* Adjust width to suit your layout */
+  justify-items: center; /* Center items horizontally */
+  background-color: #e74c3c; /* Red color */
+  align-items: center;
+  padding: 20px;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+  transition: width 0.3s;
+  border-radius: 15px; /* More rounded edges */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 4px 30px rgba(0, 0, 0, 0.3); /* Updated shadow for 3D effect */
+  z-index: 1; /* Ensure it appears above other elements */
+  margin-bottom: 40px;
+  margin-left: 28%;
+  margin-top: 8%;
+  margin-right: 0px;
+  height: 75.5%;
+}
+
+.custom-ui h2 {
+  margin-bottom: 20px;
+  font-size: 1.8em;
+  color: white;
+}
+
+.custom-ui label {
+  font-size: 1.1em;
+  color: white;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.custom-ui input {
+  width: 60%;
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.custom-ui button {
+  width: 62%;
+  padding: 10px;
+  font-size: 1.1em;
+  color: red;
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.custom-ui button:hover {
+  background-color: black;
+}
+.user-details h2 {
+  margin: 0px 0px 0px 0px;
+  color: white;
+}
+.user-details p {
+  margin: 0px 0px 5% 0px;
+  color: white;
+}
+.user-details {
+  text-align: center;
+}
+
+/* for logout button */
+.logout-btn {
+  display: flex;
+  gap: 20px; /* Sets 20px gap between buttons */
+  justify-self: end; /* Align the logout button to the end (right) */
+  margin-right: 5%;
+}
+.logout-btn button {
+  background-color: red; /* Light red background */
+  color: white;
+}
+/* Query Bar Section styling is below */
+.query-bar {
+  grid-column: 2 / 3; /* Position to the right of the sidebar */
+  padding: 20px; /* Padding for content */
+  background-color: #ffffff; /* White background for content */
+  border-radius: 15px; /* Rounded edges */
+  max-height: 100%;
+  padding-right: 0%;
+}
+/* css styling for ai-engine description text is below*/
+#ai-intro {
+  margin-bottom: 1%;
+}
+.description-text {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.2rem; /* Slightly larger than normal for readability */
+  line-height: 1.5; /* Better readability with extra line spacing */
+  color: black; /* Light color for contrast on blue background */
+  padding: 1%; /* Add padding for some space around the text */
+  border-radius: 10px; /* Smooth edges */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Slight shadow for a modern look */
+  text-align: justify; /* Justify the text for a clean, structured appearance */
+  border-left: 5px solid #ffd700; /* Left yellow border for a distinctive look */
+  transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+  margin-right: 2%;
+}
+
+.description-text:hover {
+  transform: scale(1.02); /* Slight zoom effect on hover */
+}
+
+/* Styling the form container */
+.input-container {
+  display: flex; /* Use flexbox to place elements side by side */
+  align-items: center; /* Vertically align the button with the textarea */
+  gap: 10px; /* Space between the textarea and button */
+}
+
+/* Styling for the textarea */
+.ai-text-box {
+  width: 100%; /* Full width of the available space */
+  padding: 12px 15px;
+  font-size: 1.5em;
+  color: #333;
+  background-color: #fff;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  resize: none;
+  overflow: hidden;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  margin-bottom: 1%;
+}
+
+/* Styling for hover and focus states of textarea */
+.ai-text-box:hover,
+.ai-text-box:focus {
+  border-color: #007bff;
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+}
+
+/* Responsive adjustment for mobile screens */
+@media (max-width: 768px) {
+  .ai-text-box {
+    font-size: 1em;
+  }
+
+  .circular-btn {
+    width: 40px; /* Smaller button for mobile */
+    height: 40px;
+    font-size: 1em; /* Adjust font/icon size */
+  }
+}
+
+.bullet {
+  color: black; /* Bullet color */
+  font-size: 1.2em; /* Bullet size */
+  margin-right: 8px; /* Space between bullet and text */
+}
+.d12 {
+  margin-left: 2%;
+}
+
+/*css for response box */
+/* Container for the response box */
+.response-box {
+  width: 100%; /* Take up the full width of the parent container */
+  max-width: 100%; /* Ensure it doesn't exceed the parent container's width */
+  box-sizing: border-box; /* Include padding and border in the element's total width */
+  margin: 0 auto;
+  padding: 2%;
+  padding-top: 0%;
+  margin-top: 0%;
+  background: #fff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  opacity: 1;
+  transform: translateY(30px);
+  overflow-y: auto;
+  height: fit-content;
+  max-height: 61.25%;
+  color: #555;
+  white-space: pre-wrap; /* Ensures that whitespaces are respected */
+  font-size: 1.2rem;
+  white-space: pre-wrap; /* Preserve whitespace but wrap long lines */
+  word-wrap: break-word; /* Break long words onto new lines */
+  overflow-wrap: break-word; /* Cross-browser support for wrapping */
+  line-height: 1.5;
+  margin-top: 0%;
+  margin-right: 0%;
+  text-align: center;
+}
+
+/* Header for the response box */
+.response-header {
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 0%;
+  margin-bottom: 0%;
+}
+
+.response-header h2 {
+  margin-bottom: 0%;
+  font-size: 18px;
+  color: #333;
+}
+
+/* Smooth transitions */
+.response-box {
+  transition: all 0.3s ease;
+}
+
+/* Animation on hover */
+.response-box:hover {
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .response-box {
+    padding: 15px;
+  }
+
+  .response-header h2 {
+    font-size: 16px;
+  }
+}
+/* Query Bar Section */
+
+.query-bar h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 0.1%;
+}
+
+.query-bar label {
+  font-size: 1.1em;
+  color: #333;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.query-bar input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.query-bar button {
+  width: 10%;
+  height: 10%;
+  padding: 10px;
+  font-size: 1.1em;
+  color: #fff;
+  background-color: #2196f3;
+  border: none;
+  border-radius: 5%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.query-bar button:hover {
+  background-color: #1976d2;
+}
+
+.date-container {
+  display: flex; /* Use flexbox to align items in a row */
+  gap: 5%; /* Adjust the gap size as needed */
+  align-items: center; /* Align items vertically in the center */
+}
+
+.blackerclass {
+  background: #000;
+  color: white;
+}
+.query-bar h2 {
+  margin-top: 0%;
+  margin-bottom: 1.5%;
+}
+.description-text ul {
+  margin-top: 0%;
+  margin-bottom: 0%;
+  padding-left: 0%;
+}
+#queryForm {
+  margin-right: 2%;
+}
+.custom-file-upload {
+  cursor: pointer;
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border-radius: 5px;
+  width: 20%;
+}
+/* Initial styling for the upload button */
+.custom-file-upload {
+  cursor: pointer;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border-radius: 5px;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect */
+.custom-file-upload:hover {
+  background-color: #45a049;
+}
+
+/* Style when a file is selected */
+.file-selected {
+  background-color: #008cba; /* Change to blue when file is selected */
+}
+/* Popup Modal Styles */
+.logout-popup-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+
+#logout-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+}
+
+#logout-close-btn:hover {
+  color: #000;
+}
+.logout-popup-content {
+  background-color: #e74c3c; /* Red color */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+  animation: popupIn 0.3s ease-out;
+  text-align: center;
+}
+.logout-popup-content h3 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: white;
+}

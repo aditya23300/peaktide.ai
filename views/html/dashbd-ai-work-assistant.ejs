@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ai-work-assistant</title>
+    <link rel="stylesheet" href="../css/dashbd-ai-work-assistant.css" />
+    <!-- Standard favicon -->
+    <link
+      rel="icon"
+      href="../pics/favicon-16x16.png"
+      sizes="16x16"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <!-- Logo Section -->
+      <div class="logo">
+        <img src="../pics/newlogo-removebg-preview.png" alt="Logo" />
+      </div>
+      <div class="logout-btn">
+        <button id="homeButton" class="sidebar-button">Home</button>
+        <button id="logoutButton" class="sidebar-button">Logout</button>
+      </div>
+    </header>
+    <div class="sidebar">
+      <div class="avatar">
+        <img
+          src="<%= userDetails.photoURL %>"
+          alt="User Avatar"
+          class="avatar-img"
+        />
+      </div>
+      <div class="user-details">
+        <h2><%= userDetails.username %></h2>
+        <p><%= userDetails.email %></p>
+      </div>
+      <div class="attendance-content">
+        <h2>Attendance summary:</h2>
+        <p id="todayattendance" class="current-percentage"></p>
+        <p id="overallattendance" class="total-percentage"></p>
+      </div>
+      <div class="buttons">
+        <button id="attendance-records" class="sidebar-button">
+          Attendance Records
+        </button>
+        <button id="ai-query-engine" class="sidebar-button">
+          AI-query Engine
+        </button>
+        <button id="ai-work-assistant" class="sidebar-button blackerclass">
+          AI-work Assistant
+        </button>
+        <button id="notification-settings" class="sidebar-button">
+          Notification Settings
+        </button>
+        <button id="profile-settings" class="sidebar-button">
+          Profile Settings
+        </button>
+      </div>
+    </div>
+    <!-- Query Bar Section -->
+    <section class="query-bar custom-ui">
+      <h2>Have a Question?</h2>
+      <div class="description-text" id="ai-intro">
+        Get your work done in seconds using our latest AI-powered document
+        analyser backed by gemini-AI.<strong><br />Important Note:</strong>
+        <ul>
+          <li class="d12">
+            Upload your work document in either pdf or txt format and give a
+            proper prompt mentioning what you want to get done , click send and
+            wait for the magic!!!
+          </li>
+        </ul>
+      </div>
+      <form id="queryForm">
+        <label for="userQuery"><strong>Your prompt here:</strong></label>
+        <div class="input-container">
+          <textarea
+            id="userQuery"
+            class="ai-text-box"
+            placeholder="Type your query here..."
+            required
+          ></textarea>
+
+          <button id="submitqueryButton" type="submit" class="circular-btn">
+            SEND
+          </button>
+        </div>
+        <!-- File Input Button -->
+        <label for="file-upload" class="custom-file-upload">
+          Upload PDF or TXT File
+        </label>
+        <input
+          type="file"
+          id="file-upload"
+          accept=".pdf, .txt"
+          style="display: none"
+        />
+
+        <!-- Display File Name -->
+        <p id="file-name"></p>
+        <p id="warningmsg"></p>
+        <div class="response-header">
+          <h2>Your Response:</h2>
+        </div>
+      </form>
+      <div id="response-box" class="response-box">
+        Responses would appear here!!!
+      </div>
+    </section>
+    <!-- logout Popup -->
+    <div id="logout-popup" class="logout-popup-modal">
+      <div class="logout-popup-content">
+        <span id="logout-close-btn">&times;</span>
+        <!-- Add the icon above the heading -->
+        <img
+          src="<%= userDetails.photoURL %>"
+          alt="User Avatar"
+          class="avatar-img logout-popup-img"
+        />
+        <h3 id="logout-popup-text-content"></h3>
+      </div>
+    </div>
+  </body>
+  <script type="module" src="../js/dashbd-common.js"></script>
+  <script type="module" src="../js/dashbd-ai-work-assistant.js"></script>
+</html>

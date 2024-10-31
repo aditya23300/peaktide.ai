@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>profile-settings</title>
+    <link rel="stylesheet" href="../css/dashbd-profile-settings.css" />
+    <!-- Standard favicon -->
+    <link
+      rel="icon"
+      href="../pics/favicon-16x16.png"
+      sizes="16x16"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <!-- Logo Section -->
+      <div class="logo">
+        <img src="../pics/newlogo-removebg-preview.png" alt="Logo" />
+      </div>
+      <div class="logout-btn">
+        <button id="homeButton" class="sidebar-button">Home</button>
+        <button id="logoutButton" class="sidebar-button">Logout</button>
+      </div>
+    </header>
+    <div class="sidebar">
+      <div class="avatar">
+        <img src="<%= userDetails.photoURL %>" class="avatar-img userAvatar" />
+      </div>
+      <div class="user-details">
+        <h2 class="username"><%= userDetails.username %></h2>
+        <p class="email"><%= userDetails.email %></p>
+      </div>
+      <div class="attendance-content">
+        <h2>Attendance summary:</h2>
+        <p id="todayattendance" class="current-percentage"></p>
+        <p id="overallattendance" class="total-percentage"></p>
+      </div>
+      <div class="buttons">
+        <button id="attendance-records" class="sidebar-button">
+          Attendance Records
+        </button>
+        <button id="ai-query-engine" class="sidebar-button">
+          AI-query Engine
+        </button>
+        <button id="ai-work-assistant" class="sidebar-button">
+          AI-work Assistant
+        </button>
+        <button id="notification-settings" class="sidebar-button">
+          Notification Settings
+        </button>
+        <button id="profile-settings" class="sidebar-button blackerclass">
+          Profile Settings
+        </button>
+      </div>
+    </div>
+    <div class="info-container custom-ui">
+      <h2>Profile-details:</h2>
+      <div class="avatar profile-setting-page-avatar">
+        <img
+          src="<%= userDetails.photoURL %>"
+          alt="User Avatar"
+          class="avatar-img userAvatar"
+        />
+      </div>
+      <div class="info-item">
+        <strong>Username:</strong>
+        <span class="username"><%= userDetails.username %></span>
+      </div>
+      <div class="info-item">
+        <strong>Email:</strong>
+        <span class="email"><%= userDetails.email %></span>
+      </div>
+      <div class="info-item">
+        <strong>Phone Number:</strong>
+        <span class="phone"><%= userDetails.phone %></span>
+      </div>
+      <div class="info-item">
+        <strong>Password:</strong>
+        <span class="password"><%= userDetails.password %></span>
+      </div>
+      <button id="editProfileBtn" type="submit">Edit Profile</button>
+    </div>
+    <div
+      id="parent-container"
+      style="display: none"
+      class="custom-ui prime-container"
+    >
+      <h2>Edit Profile</h2>
+      <div class="avatar profile-setting-page-avatar">
+        <img
+          src="<%= userDetails.photoURL %>"
+          alt="User Avatar"
+          class="avatar-img userAvatar picPreview"
+        />
+        <input
+          type="file"
+          id="picFileInput"
+          accept="image/*"
+          style="display: none"
+        />
+        <button id="uploadPicButton">Upload Picture</button>
+      </div>
+      <!-- Dropdown to select fields -->
+      <label id="field-select-label" for="fieldSelect"
+        >Choose the fields you wish to change:</label
+      >
+      <select id="fieldSelect">
+        <option value="">Select a field</option>
+        <option value="username" type="text">Username</option>
+        <option value="password" type="password">Password</option>
+        <option value="phone" type="tel">Phone-Number</option>
+        <option value="email" type="email">Email</option>
+      </select>
+      <button id="addFieldButton" disabled>Add Field</button>
+      <!-- Container where input fields will be dynamically added -->
+      <div id="formContainer" class="form-container"></div>
+      <button id="editSubmitBtn" type="submit">UPDATE DETAILS</button>
+      <p class="warningmsg"></p>
+    </div>
+    <!-- logout Popup -->
+    <div id="logout-popup" class="logout-popup-modal">
+      <div class="logout-popup-content">
+        <span id="logout-close-btn">&times;</span>
+        <!-- Add the icon above the heading -->
+        <img
+          src="<%= userDetails.photoURL %>"
+          alt="User Avatar"
+          class="avatar-img logout-popup-img"
+        />
+        <h3 id="logout-popup-text-content"></h3>
+      </div>
+    </div>
+  </body>
+  <script type="module" src="../js/dashbd-common.js"></script>
+  <script type="module" src="../js/dashbd-profile-settings.js"></script>
+</html>

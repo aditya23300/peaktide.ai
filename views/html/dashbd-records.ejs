@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dashbd-records</title>
+    <link rel="stylesheet" href="../css/dashbd-records.css" />
+    <!-- Standard favicon -->
+    <link
+      rel="icon"
+      href="../pics/favicon-16x16.png"
+      sizes="16x16"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <!-- Logo Section -->
+      <div class="logo">
+        <img src="../pics/newlogo-removebg-preview.png" alt="Logo" />
+      </div>
+      <div class="logout-btn">
+        <button id="homeButton" class="sidebar-button">Home</button>
+        <button id="logoutButton" class="sidebar-button">Logout</button>
+      </div>
+    </header>
+    <div class="sidebar">
+      <div class="avatar">
+        <img
+          src="<%= userDetails.photoURL %>"
+          alt="User Avatar"
+          class="avatar-img"
+        />
+      </div>
+      <div class="user-details">
+        <h2><%= userDetails.username %></h2>
+        <p><%= userDetails.email %></p>
+      </div>
+      <div class="attendance-content">
+        <h2>Attendance summary:</h2>
+        <p id="todayattendance" class="current-percentage"></p>
+        <p id="overallattendance" class="total-percentage"></p>
+      </div>
+      <div class="buttons">
+        <button id="attendance-records" class="sidebar-button blackerclass">
+          Attendance Records
+        </button>
+        <button id="ai-query-engine" class="sidebar-button">
+          AI-query Engine
+        </button>
+        <button id="ai-work-assistant" class="sidebar-button">
+          AI-work Assistant
+        </button>
+        <button id="notification-settings" class="sidebar-button">
+          Notification Settings
+        </button>
+        <button id="profile-settings" class="sidebar-button">
+          Profile Settings
+        </button>
+      </div>
+    </div>
+    <!-- Date Range Form Section -->
+    <section class="date-range custom-ui">
+      <form id="dateRangeForm">
+        <h2>View Attendance Records:</h2>
+        <div class="date-container">
+          <div class="date-item">
+            <label for="startDate">Start Date:</label>
+            <input type="date" id="startDate" required />
+          </div>
+          <div class="date-item">
+            <label for="endDate">End Date:</label>
+            <input type="date" id="endDate" required />
+          </div>
+        </div>
+        <button id="getRecordsButton" style="display: block" type="submit">
+          Get Records
+        </button>
+      </form>
+      <p id="invalidDateWarning" style="display: none"></p>
+      <div>
+        <h4 id="noRecordsMessage" style="display: none">
+          Result:<br />
+          NO RECORDS FOUND IN THIS RANGE!!! PLEASE TRY AGAIN.
+        </h4>
+      </div>
+    </section>
+    <!-- Attendance Records Section (Hidden by Default) -->
+    <section
+      class="attendance-records custom-ui"
+      id="attendanceSection"
+      style="display: none"
+    >
+      <h2>Attendance Records</h2>
+      <p id="dates-summary"></p>
+      <table id="attendanceTable">
+        <thead>
+          <tr>
+            <th>Date(Format:YYYY-MM-DD)</th>
+            <th>Classes Attended</th>
+            <th>Total Classes</th>
+            <th>Attendance %</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Records will be dynamically added here -->
+        </tbody>
+      </table>
+      <p id="attendance-summary"></p>
+      <button id="retry-btn">RETRY</button>
+    </section>
+    <!-- logout Popup -->
+    <div id="logout-popup" class="logout-popup-modal">
+      <div class="logout-popup-content">
+        <span id="logout-close-btn">&times;</span>
+        <!-- Add the icon above the heading -->
+        <img
+          src="<%= userDetails.photoURL %>"
+          alt="User Avatar"
+          class="avatar-img logout-popup-img"
+        />
+        <h3 id="logout-popup-text-content"></h3>
+      </div>
+    </div>
+  </body>
+  <script type="module" src="../js/dashbd-common.js"></script>
+  <script type="module" src="../js/dashbd-records.js"></script>
+</html>

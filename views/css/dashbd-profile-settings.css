@@ -1,0 +1,470 @@
+/* Body styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: grid;
+  font-family: "Roboto", sans-serif;
+  color: #333;
+  display: flex;
+  background: url("/pics/bghomepage.jpg") no-repeat center center fixed;
+  background-size: cover;
+  overflow: hidden;
+  box-sizing: border-box;
+  grid-template-columns: 1fr auto; /* Two columns: one for sidebar+logo, one for content */
+  grid-template-rows: auto 1fr auto; /* Two rows: one for header, one for the rest */
+  width: 100vw; /* Full width of the viewport */
+  position: fixed; /* Ensure it's fixed on the screen */
+}
+/* Header: logo and card in grid layout */
+.header {
+  grid-column: 1 / 3; /* Span across both columns */
+  display: grid;
+  grid-template-columns: auto 1fr auto; /* Logo on left, card on right */
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  position: fixed; /* Fix header at the top */
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+/* Logo styling */
+.logo img {
+  max-width: 50%; /* Set a max width for the logo */
+  height: auto; /* Maintain aspect ratio */
+}
+/* Sidebar styling */
+.sidebar {
+  position: fixed; /* Absolute positioning */
+  grid-row: 2 / 3; /* Place sidebar below the logo */
+  grid-column: 1 / 2; /* Sidebar takes the first column */
+  grid-template-rows: auto 1fr; /* Avatar row and button row */
+  justify-items: center; /* Center items horizontally */
+  width: 18%;
+  background-color: #e74c3c; /* Red color */
+  align-items: center;
+  padding: 20px;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+  transition: width 0.3s;
+  height: fit-content;
+  border-radius: 15px; /* More rounded edges */
+  margin-top: 4%;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 4px 30px rgba(0, 0, 0, 0.3); /* Updated shadow for 3D effect */
+  top: 60px; /* Below the navbar */
+  left: 0; /* Align to the left */
+}
+
+/* Avatar styling */
+.avatar {
+  display: flex; /* Use flexbox for centering the image */
+
+  justify-content: center; /* Center the image horizontally */
+  align-items: center; /* Center the image vertically */
+  margin-bottom: 2.5%;
+  z-index: 10000; /* Make sure the avatar is above the background */
+}
+
+.avatar-img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  transition: transform 0.3s;
+  background-color: white; /* Add a background color to make it stand out */
+}
+
+/* Button container styling */
+.buttons {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Button styling */
+.sidebar-button {
+  background-color: #ffffff; /* Button background */
+  border: none;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 5px 0;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: red;
+}
+
+/* Button hover effects */
+.sidebar-button:hover {
+  background-color: black; /* Button hover color */
+  transform: translateY(-3px); /* Move up on hover */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  color: white;
+}
+
+/* Avatar hover effect */
+.avatar-img:hover {
+  transform: scale(1.1); /* Scale up avatar on hover */
+}
+
+/* Content styling */
+.attendance-content h2 {
+  font-size: 1.2rem; /* Title font size */
+  margin-bottom: 10px; /* Space below title */
+}
+
+.attendance-content p {
+  font-size: 1rem; /* Paragraph font size */
+  margin: 5px 0; /* Margin for paragraphs */
+}
+
+/* Percentage value styling */
+.percentage-value {
+  font-weight: bold; /* Bold for emphasis */
+  font-size: 1rem; /* Larger font size for percentage */
+}
+
+/* Animation effect for percentages */
+.attendance-content p {
+  transition: transform 0.3s; /* Smooth transition */
+}
+
+.attendance-content {
+  max-width: 100%;
+  margin-bottom: 1.5%;
+  background-color: black; /* Button background */
+  border: none;
+  border-radius: 5px;
+  padding: 0.5%;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: white;
+  text-align: center;
+  max-height: fit-content;
+}
+/* Button hover effects */
+.attendance-content:hover {
+  transform: translateY(-3px); /* Move up on hover */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Attendance Form Section */
+.custom-ui {
+  position: absolute; /* Change from fixed to relative */
+  grid-row: 3 / 4; /* Place form below the attendance card */
+  grid-column: 2 / 3; /* Position to the right of the sidebar */
+  width: 80%; /* Adjust width to suit your layout */
+  height: fit-content;
+  justify-items: center; /* Center items horizontally */
+  background-color: #e74c3c; /* Red color */
+  align-items: center;
+  padding: 20px;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+  transition: width 0.3s;
+  border-radius: 15px; /* More rounded edges */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 4px 30px rgba(0, 0, 0, 0.3); /* Updated shadow for 3D effect */
+  z-index: 1; /* Ensure it appears above other elements */
+  margin-bottom: 40px;
+  margin-left: 24%;
+  margin-top: 8%;
+  margin-right: 0px;
+}
+
+.custom-ui h2 {
+  margin-bottom: 20px;
+  font-size: 1.8em;
+  color: white;
+}
+
+.custom-ui label {
+  font-size: 1.1em;
+  color: white;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.custom-ui input {
+  width: 60%;
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.custom-ui button {
+  width: 62%;
+  padding: 10px;
+  font-size: 1.1em;
+  color: red;
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.custom-ui button:hover {
+  background-color: black;
+}
+.user-details h2 {
+  margin: 0px 0px 0px 0px;
+  color: white;
+}
+.user-details p {
+  margin: 0px 0px 5% 0px;
+  color: white;
+}
+.user-details {
+  text-align: center;
+}
+
+/* for logout button */
+.logout-btn {
+  display: flex;
+  gap: 20px; /* Sets 20px gap between buttons */
+  justify-self: end; /* Align the logout button to the end (right) */
+  margin-right: 5%;
+}
+.logout-btn button {
+  background-color: red; /* Light red background */
+  color: white;
+}
+.blackerclass {
+  background: #000;
+  color: white;
+}
+.form-container {
+  margin-top: 1%;
+  margin-left: 23.5%;
+  div {
+    font-size: 0.9rem;
+  }
+
+  label {
+    padding-bottom: 2%;
+    margin-bottom: 0%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+  }
+  button {
+    margin-bottom: 0%;
+  }
+  input {
+    margin-bottom: 0%;
+    margin-top: 0%;
+  }
+}
+.form-input {
+  margin-bottom: 10px;
+}
+label {
+  display: block;
+  margin-top: 0%;
+}
+.form-group {
+  display: flex;
+  align-items: center;
+}
+.close-btn {
+  margin-left: 10px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+.prime-container {
+  justify-content: center;
+  padding-top: 1%;
+  h2 {
+    margin-top: 0%;
+    margin-bottom: 0%;
+    font-size: 1.5rem;
+    margin-left: 45%;
+  }
+  label {
+    font-size: 1.2rem;
+    margin-bottom: 0%;
+    text-align: center;
+  }
+  select {
+    margin-left: 33%;
+    margin-bottom: 0%;
+    width: 15%;
+    padding: 1%;
+    font-size: 1rem;
+    border-radius: 12px;
+    background-color: white;
+    color: black;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transitions */
+    margin-right: 2%;
+  }
+
+  select:hover {
+    background-color: #f0f8ff; /* Light background on hover */
+    border-color: black;
+    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.4); /* Stronger shadow on hover */
+  }
+
+  select:focus {
+    background-color: #e6f3ff; /* Background change on focus */
+    border-color: black; /* Darker border on focus */
+    box-shadow: 0 6px 20px black; /* Stronger shadow on focus */
+  }
+  button {
+    width: 18%;
+    color: black;
+  }
+  button:hover {
+    color: white;
+  }
+}
+#editSubmitBtn {
+  margin-top: 1%;
+  margin-left: 40%;
+  background-color: green;
+  color: white;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition for background color and transform */
+  cursor: pointer; /* Pointer cursor on hover */
+  border-radius: 5px; /* Rounded corners */
+}
+/* Hover effect */
+#editSubmitBtn:hover {
+  background-color: darkgreen; /* Darker blue on hover */
+  transform: translateY(-2px); /* Slightly lift the button */
+}
+
+/* Active effect */
+#editSubmitBtn:active {
+  background-color: darkgreen; /* Even darker blue on click */
+  transform: translateY(0); /* Reset position */
+}
+
+/* Focus effect */
+#editSubmitBtn:focus {
+  outline: none; /* Remove default outline */
+  box-shadow: 0 0 5px darkgreen; /* Add shadow for focus state */
+}
+.warningmsg {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: black;
+  white-space: pre-wrap; /* Allows line breaks */
+  overflow-wrap: break-word; /* Ensures words break if too long */
+  margin-bottom: 0%;
+  margin-top: 0.7%;
+  margin-left: 40%;
+}
+.profile-setting-page-avatar {
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+#addFieldButton {
+  width: 10%;
+  font-size: 1rem;
+}
+#field-select-label {
+  margin-bottom: 1%;
+}
+.info-container {
+  text-align: left;
+
+  h2 {
+    font-size: 2rem;
+    margin-left: 40%;
+  }
+}
+.info-item {
+  margin-top: 1%;
+  margin-bottom: 1%;
+  strong,
+  span {
+    font-size: 1.2rem;
+    color: black;
+  }
+  margin-left: 40%;
+}
+#editProfileBtn {
+  margin-top: 1%;
+  margin-left: 43%;
+  width: 15%;
+  background-color: green;
+  color: white;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition for background color and transform */
+  cursor: pointer; /* Pointer cursor on hover */
+  border-radius: 5px; /* Rounded corners */
+}
+/* Hover effect */
+#editProfileBtn:hover {
+  background-color: darkgreen; /* Darker blue on hover */
+  transform: translateY(-2px); /* Slightly lift the button */
+}
+
+/* Active effect */
+#editProfileBtn:active {
+  background-color: darkgreen; /* Even darker blue on click */
+  transform: translateY(0); /* Reset position */
+}
+
+/* Focus effect */
+#editProfileBtn:focus {
+  outline: none; /* Remove default outline */
+  box-shadow: 0 0 5px darkgreen; /* Add shadow for focus state */
+}
+#uploadPicButton {
+  margin-top: 1%;
+  width: fit-content;
+  height: fit-content;
+  font-size: 1rem;
+  margin-left: 2%;
+}
+/* Popup Modal Styles */
+.logout-popup-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+
+#logout-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+}
+
+#logout-close-btn:hover {
+  color: #000;
+}
+.logout-popup-content {
+  background-color: #e74c3c; /* Red color */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+  animation: popupIn 0.3s ease-out;
+  text-align: center;
+}
+.logout-popup-content h3 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: white;
+}
