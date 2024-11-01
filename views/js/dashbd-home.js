@@ -17,10 +17,17 @@ document.addEventListener("DOMContentLoaded", async function () {
   userForm.addEventListener("submit", async (event) => {
     event.preventDefault(); // Prevent default form submission
     // Get form input values
-    const todayAttended = document.getElementById("todayattended").value;
-    const todayTotal = document.getElementById("todaytotal").value;
+    let todayAttended = document.getElementById("todayattended").value;
+    todayAttended = parseInt(todayAttended);
+    let todayTotal = document.getElementById("todaytotal").value;
+    todayTotal = parseInt(todayTotal);
+    console.log(todayAttended);
+    console.log(todayTotal);
     // Simple validation to check if valid values are provided
-    if (todayAttended <= todayTotal && todayAttended >= 0) {
+    if (
+      (todayAttended <= todayTotal && todayAttended >= 0 && todayTotal > 0) ||
+      (todayAttended === todayTotal && todayAttended === 0)
+    ) {
       // Prepare data to send to the server
       const attendanceData = {
         todayAttended: parseInt(todayAttended),
@@ -51,6 +58,8 @@ document.addEventListener("DOMContentLoaded", async function () {
       } catch (error) {
         warningMsg.textContent = `Request failed: ${error.message}`;
       }
+    } else {
+      warningMsg.textContent = "Please provide valid entries!!!";
     }
   });
 });

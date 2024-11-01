@@ -134,9 +134,12 @@ async function updateTodayAttendance(uid, todayAttendedValue, todayTotalValue) {
     }
 
     const userDocRef = db.collection("users").doc(uid); // Reference to the user's document
-    const percentage = ((todayAttendedValue / todayTotalValue) * 100).toFixed(
-      2
-    );
+    let percentage;
+    if (todayTotalValue === todayAttendedValue && todayAttendedValue === 0) {
+      percentage = 0;
+    } else {
+      percentage = ((todayAttendedValue / todayTotalValue) * 100).toFixed(2);
+    }
     const date = await getDate(); // Assuming getDate() is defined and returns the current date as a string
 
     const attendanceData = {
