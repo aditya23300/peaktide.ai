@@ -2,10 +2,10 @@
   "name": "attendace_proj",
   "version": "1.0.0",
   "description": "this is the project corresponding to brand \"peaktide.ai\"",
-  "main": "newserver.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node newserver.js"
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",

@@ -213,8 +213,7 @@ Object.keys(routes).forEach((route) => {
   });
 });
 
-// Start the server on port 3000
-const PORT = 3000;
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+// Start the server on designated port
+app.listen(process.env.PORT, () => {
+  console.log(`Server is running on ${process.env.PORT}`);
 });
