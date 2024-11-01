@@ -5,7 +5,7 @@ const {
   getStorage,
   getDownloadURL,
   getAuth,
-} = require("../../firebase-admin-config.js"); // Adjust the path as necessary
+} = require("../configs/firebase-admin-config.js"); // Adjust the path as necessary
 const multer = require("multer");
 //function defintion starts from here....
 async function getDate() {

@@ -1,11 +1,17 @@
 <------------------------------------about project----------------------------------------------------------------------------->
-name of the project is "peaktide.ai"
+
+1. name of the project is "peaktide.ai"
+
+<---------------file structure of this project-------------------------------------------------------------------------------->
+
+1. readme.md is not needed in either of frontend deployment or backend deployment, its just for maintaining the starter/info about the project on github, so it will be kept outside of frontend or backend folder.
+2. all the files related to github like git,gitignore are used for managing the overall project repo on the github , so they have no role in the deployment so we keep them in root directory and out of the frontend and backend folders.
 
 <-----------------------notes-------------------------------------------------------------------------------------------------->
 for WhatsApp notification : WhatsApp cloud api (provided by meta for business)
 
-why python for WhatsApp is not possible?
-python automation for WhatsApp: can only handle 1 conversation per whatsapp account at any instant ,,if it detects>1 conversation at any instant then it will detect that bot is being used and will block the number from WhatsApp forever and also file a legal suite.
+5. why python for WhatsApp is not possible?
+   python automation for WhatsApp: can only handle 1 conversation per whatsapp account at any instant ,,if it detects>1 conversation at any instant then it will detect that bot is being used and will block the number from WhatsApp forever and also file a legal suite.
 
 <----------------------------work-flow for updating the codebase on github----------------------------------------------------->
 Whenever you make changes to your project, you can follow this general workflow to update your GitHub repository:

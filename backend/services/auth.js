@@ -4,7 +4,7 @@ const {
   signInWithEmailAndPassword,
   db,
   createUserWithEmailAndPassword,
-} = require("../../firebase-config.js"); // Adjust the path as necessary
+} = require("../configs/firebase-config.js"); // Adjust the path as necessary
 
 // Function for signing in with Firebase
 async function signInWithFirebase(email, password) {
