@@ -24,10 +24,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     console.log(todayAttended);
     console.log(todayTotal);
     // Simple validation to check if valid values are provided
-    if (
-      (todayAttended <= todayTotal && todayAttended >= 0 && todayTotal > 0) ||
-      (todayAttended === todayTotal && todayAttended === 0)
-    ) {
+    if (todayAttended <= todayTotal && todayAttended >= 0 && todayTotal > 0) {
       // Prepare data to send to the server
       const attendanceData = {
         todayAttended: parseInt(todayAttended),
