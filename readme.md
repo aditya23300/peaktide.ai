@@ -33,3 +33,10 @@ Push your committed changes to the remote repository:
 command: git push origin master
 
 step-5: you are done,,,just check the status using git status command
+
+
+in short,
+git status
+git add .
+git commit -m "your message"
+git push origin your_branch_name
